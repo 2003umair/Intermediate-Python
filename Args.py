@@ -4,11 +4,11 @@ import sys
 
 def input():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--x', type=int, default=5,
+    parser.add_argument('--x', type=float, default=5,
                help='Enter the first number:  ')
-    parser.add_argument('--y', type=int, default=3,
+    parser.add_argument('--y', type=float, default=3,
                help='Enter the second number:  ')
-    parser.add_argument('--operator', type=str, default='addition',
+    parser.add_argument('--operator', type=str, default='division',
                help='Enter the (addition, subtraction, multiplication, division):  ')
     args = parser.parse_args()
     sys.stdout.write(str(calculation(args)))                       
@@ -23,5 +23,5 @@ def calculation(args):
     elif args.operator == 'division':
         return args.x / args.y  
 
-if _name_ == '_main_':
+if __name__== '__main__':
     input()
